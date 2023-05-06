@@ -4,7 +4,6 @@ public class Product {
     public String name;
     public double price;
     public int quantity;
-    public double total;
 
     public double getTotal() {
         return price * quantity;
@@ -20,5 +19,10 @@ public class Product {
 
     public void removeProduct(int quantity) {
         this.quantity -= quantity;
+    }
+
+    public String toString() {
+        return name + ", Preço: " + String.format("%.2f", price) + ", Quantidade: " + quantity + ", Total: "
+                + String.format("%.2f", getTotal());
     }
 }
