@@ -16,25 +16,17 @@ public class App {
         System.out.println("Informe a quantidade do produto:");
         product.quantity = sc.nextInt();
 
-        System.out.println("Produto: " + product.name);
-        System.out.println("Preço: " + product.price);
-        System.out.println("Quantidade: " + product.quantity);
+        System.out.println("Dados do produto: " + product);
 
         System.out.println("Informe a quantidade do produtor " + product.name + " que deseja adicionar no estoque:");
         int quantity = sc.nextInt();
         product.addProducts(quantity);
-        System.out.println(
-                "Produto: " + product.name
-                        + ", Quantidade: " + product.quantity
-                        + ", Total: " + product.getTotal());
+        System.out.println("Atualização do produto: " + product);
 
         System.out.println("Informe a quantidade do produtor " + product.name + " que deseja remover do estoque:");
         quantity = sc.nextInt();
         product.removeProduct(quantity);
-        System.out.println(
-                "Produto: " + product.name
-                        + ", Quantidade: " + product.quantity
-                        + ", Total: " + product.getTotal());
+        System.out.println("Atualização do produto: " + product);
 
     }
 }
