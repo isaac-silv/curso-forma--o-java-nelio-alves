@@ -7,19 +7,20 @@ public class App {
     public static void main(String[] args) throws Exception {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
-        Product product = new Product();
 
         System.out.println("Informe o nome do produto:");
-        product.name = sc.nextLine();
+        String name = sc.nextLine();
         System.out.println("Informe o preço do produto:");
-        product.price = sc.nextDouble();
+        double price = sc.nextDouble();
         System.out.println("Informe a quantidade do produto:");
-        product.quantity = sc.nextInt();
+        int quantity = sc.nextInt();
+
+        Product product = new Product(name, price, quantity);
 
         System.out.println("Dados do produto: " + product);
 
         System.out.println("Informe a quantidade do produtor " + product.name + " que deseja adicionar no estoque:");
-        int quantity = sc.nextInt();
+        quantity = sc.nextInt();
         product.addProducts(quantity);
         System.out.println("Atualização do produto: " + product);
 
