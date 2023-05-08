@@ -6,13 +6,15 @@ public class BankAccount {
     private double balance;
     private double tax = 5.00;
 
-    public BankAccount() {
+    public BankAccount(String holder, String accountNumber) {
+        this.holder = holder;
+        this.accountNumber = accountNumber;
     }
 
     public BankAccount(String holder, String accountNumber, double initialDepositValue) {
         this.holder = holder;
         this.accountNumber = accountNumber;
-        this.balance = initialDepositValue;
+        deposit(initialDepositValue);
     }
 
     public String getHolder() {

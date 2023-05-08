@@ -7,6 +7,7 @@ public class App {
     public static void main(String[] args) throws Exception {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
+        BankAccount ba;
 
         System.out.println("Enter account number: ");
         String accountNumber = sc.nextLine();
@@ -14,13 +15,14 @@ public class App {
         String holder = sc.nextLine();
         System.out.println("Is there na initial deposit? (y/n) ");
         String initialDeposit = sc.nextLine();
-        double initialDepositValue = 0;
+        double initialDepositValue;
         if (initialDeposit.equals("y")) {
             System.out.println("Enter initial deposit value: ");
             initialDepositValue = sc.nextDouble();
+            ba = new BankAccount(holder, accountNumber, initialDepositValue);
+        } else {
+            ba = new BankAccount(holder, accountNumber);
         }
-
-        BankAccount ba = new BankAccount(holder, accountNumber, initialDepositValue);
 
         System.out.println();
         System.out.println("Account data:");
