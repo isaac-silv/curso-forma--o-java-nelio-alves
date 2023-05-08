@@ -23,13 +23,13 @@ public class App {
             System.out.print("Room: ");
             int room = sc.nextInt();
 
-            rents[room] = new Rent(name, email);
+            rents[room - 1] = new Rent(name, email);
         }
 
         System.out.println("Budy rooms:");
         for (int i = 0; i < rents.length; i++) {
             if (rents[i] != null) {
-                System.out.println(i + ": " + rents[i].getName() + ", " + rents[i].getEmail());
+                System.out.println((i + 1) + ": " + rents[i].getName() + ", " + rents[i].getEmail());
             }
         }
     }
