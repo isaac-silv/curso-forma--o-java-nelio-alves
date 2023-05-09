@@ -25,7 +25,7 @@ public class App {
             System.out.print("Salary: ");
             double salary = sc.nextDouble();
 
-            emp.add(new Employee(null, name, null));
+            emp.add(new Employee(id, name, salary));
         }
 
         System.out.print("Enter the employee id that will have salary increase :");
@@ -33,6 +33,9 @@ public class App {
         System.out.print("Enter the percentage: ");
         double value = sc.nextDouble();
 
-        emp.stream().filter(x -> x.getId() == e)
+        for (Employee x : emp) {
+            System.out.println(x);
+        }
+
     }
 }

@@ -43,4 +43,9 @@ public class Employee {
         salary += salary / 100 * value;
     }
 
+    @Override
+    public String toString() {
+        return getId() + ", " + getName() + ", " + String.format("%.2f", getSalary());
+    }
+
 }
