@@ -26,16 +26,33 @@ public class App {
             double salary = sc.nextDouble();
 
             emp.add(new Employee(id, name, salary));
+            System.out.println();
         }
 
-        System.out.print("Enter the employee id that will have salary increase :");
+        System.out.print("Enter the employee id that will have salary increase: ");
         int e = sc.nextInt();
-        System.out.print("Enter the percentage: ");
-        double value = sc.nextDouble();
+        Integer index = impIndex(emp, e);
 
-        for (Employee x : emp) {
+        if(index == null) {
+            System.out.println("This id does not exist!");
+        } else {
+            System.out.print("Enter the percentage: ");
+            double value = sc.nextDouble(); 
+            emp.get(index).increaseSalary(value);
+        }
+                  
+        System.out.println("Employees: ");
+        for (Employee x : emp) {            
             System.out.println(x);
         }
 
     }
-}
+    private static Integer impIndex(List<Employee> list, int id) {
+        for (int i = 0; i< list.size(); i++) {
+            if(list.get(i).getId() == id) {
+                return i;
+            }           
+        }
+        return null;
+    }
+ }

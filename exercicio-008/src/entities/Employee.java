@@ -45,7 +45,7 @@ public class Employee {
 
     @Override
     public String toString() {
-        return getId() + ", " + getName() + ", " + String.format("%.2f", getSalary());
+        return getId() + ", " + getName() + ", " + String.format("%.2f", getSalary() + ";");
     }
 
 }
